@@ -20,89 +20,91 @@ class ViewController: UIViewController {
     }
     
     @IBAction func posnegButton(_ sender: UIButton) {
-        addCalc(press: "-")
+        addCalc(pressed: "-")
         //THIS IS PROBABLY FUCKED!!
     }
     
     @IBAction func percentButton(_ sender: UIButton) {
-        addCalc(press: "%")
+        addCalc(pressed: "%")
     }
     
     @IBAction func divisionButton(_ sender: UIButton) {
-        addCalc(press: "/")
+        addCalc(pressed: "/")
     }
     
     @IBAction func sevenButton(_ sender: UIButton) {
-        addCalc(press: "7")
+        addCalc(pressed: "7")
     }
     
     @IBAction func eightButton(_ sender: UIButton) {
-        addCalc(press: "8")
+        addCalc(pressed: "8")
     }
     
     @IBAction func ninebutton(_ sender: UIButton) {
-        addCalc(press: "9")
+        addCalc(pressed: "9")
     }
     
     @IBAction func multiplicationButton(_ sender: UIButton) {
-        addCalc(press: "*")
+        addCalc(pressed: "*")
     }
     
     @IBAction func fourButton(_ sender: UIButton) {
-        addCalc(press: "4")
+        addCalc(pressed: "4")
     }
     
     @IBAction func fiveButton(_ sender: UIButton) {
-        addCalc(press: "5")
+        addCalc(pressed: "5")
     }
     
     @IBAction func sixButton(_ sender: UIButton) {
-        addCalc(press: "6")
+        addCalc(pressed: "6")
     }
     
     @IBAction func minusButton(_ sender: UIButton) {
-        addCalc(press: "-")
+        addCalc(pressed: "-")
     }
     
     @IBAction func oneButton(_ sender: UIButton) {
-        addCalc(press: "1")
+        addCalc(pressed: "1")
     }
     
     @IBAction func twoButton(_ sender: UIButton) {
-        addCalc(press: "2")
+        addCalc(pressed: "2")
     }
     
     @IBAction func threeButton(_ sender: UIButton) {
-        addCalc(press: "3")
+        addCalc(pressed: "3")
     }
     
     @IBAction func plusButton(_ sender: UIButton) {
-        addCalc(press: "+")
+        addCalc(pressed: "+")
     }
     
     @IBAction func zeroButton(_ sender: UIButton) {
-        addCalc(press: "0")
+        addCalc(pressed: "0")
     }
     
     @IBAction func decimalButton(_ sender: UIButton) {
-        addCalc(press: ".")
+        addCalc(pressed: ".")
     }
     
     @IBAction func equalsButton(_ sender: UIButton) {
-        addCalc(press: "=")
+        calculate()
     }
     
     
     var calculationString: String = ""
     
-    func addCalc (press: String){
-        calculationString.append("\(press)")
-        print("\(press)")
+    func addCalc (pressed: String){
+        calculationString.append("\(pressed)")
+        resultLabelUpdate()
+        print("\(pressed)")
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        calculate()
     }
     
     func resultLabelUpdate(){
@@ -110,6 +112,10 @@ class ViewController: UIViewController {
         resultLabel.text = calculationString
     }
     
+    func calculate() -> Double{
+        let result = Double(calculationString) ?? 0
+        return result
+    }
     
 }
 
