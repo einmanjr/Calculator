@@ -9,69 +9,13 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var calculation = Calculation()
-
+    @IBOutlet weak var displayLabel: UILabel!
     
-    
-    //IBOutlet resultLabel is disconnected.. BOOM
-    @IBOutlet weak var resultLabel: UILabel!
-    
-    @IBAction func acButton(_ sender: UIButton) {
-        calculationString = ""
+    @IBAction func calcButtonPressed(_ sender: Any) {
     }
     
-
-    @IBAction func numberPressed(_ sender: UIButton) {
-        let pressed = sender.titleLabel?.text!
-        calculationString.append("\(pressed)")
-        resultLabelUpdate()
-        print("\(pressed)")
+    @IBAction func numButtonPressed(_ sender: UIButton) {
     }
-    
-
-    
-    @IBAction func operatorPressed(_ sender: UIButton) {
-        let pressed = sender.titleLabel?.text!
-        calculationString.append(pressed!)
-        print("\(pressed)")
-    }
-    
-
-    
-    @IBAction func equalsButton(_ sender: UIButton) {
-        
-        
-    }
-    
-    
-    var calculationString: String = ""
-    
-//    func numberPressed (pressed: String){
-//        calculationString.append("\(pressed)")
-//        resultLabelUpdate()
-//        print("\(pressed)")
-//    }
-//
-//    func operationPressed (pressed: String) {
-//        calculationString.append(pressed)
-//        print("\(pressed)")
-//    }
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-//        calculate()
-    }
-    
-    func resultLabelUpdate(){
-        //NEGATRON
-        resultLabel.text = calculationString
-    }
-    
-//    func calculate() -> Double{
-//        let result = Double(calculationString) ?? 0
-//        return result
-//    }
     
 }
 
